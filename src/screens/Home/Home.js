@@ -13,39 +13,39 @@ const DATA = [
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
     title: 'First Item',
     data: [
-      {noidung: 'nội dung 1'},
-      {noidung: 'nội dung 2'},
-      {noidung: 'nội dung 3'},
-      {noidung: 'nội dung 4'},
+      {noidung: 'noi dung 1'},
+      {noidung: 'noi dung 2'},
+      {noidung: 'noi dung 3'},
+      {noidung: 'noi dung 4'},
     ],
   },
   {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
     title: 'Second Item',
     data: [
-      {noidung: 'nội dung 1'},
-      {noidung: 'nội dung 2'},
-      {noidung: 'nội dung 3123'},
-      {noidung: 'nội dung 4'},
+      {noidung: 'noi dung 1'},
+      {noidung: 'noi dung 2'},
+      {noidung: 'noi dung 3123'},
+      {noidung: 'noi dung 4'},
     ],
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
     title: 'Third Item',
     data: [
-      {noidung: 'nội dung 1'},
-      {noidung: 'nội dung 2'},
-      {noidung: 'nội dung 22'},
-      {noidung: 'nội dung 4'},
-      {noidung: 'nội dung 4'},
-      {noidung: 'nội dung 4'},
-      {noidung: 'nội dung 4'},
+      {noidung: 'noi dung 1'},
+      {noidung: 'noi dung 2'},
+      {noidung: 'noi dung 22'},
+      {noidung: 'noi dung 4'},
+      {noidung: 'noi dung 4'},
+      {noidung: 'noi dung 4'},
+      {noidung: 'noi dung 4'},
     ],
   },
 ];
 
 const Home = () => {
-  const renderItem1 = ({item}) => {
+  const renderItem1 = (item) => {
     return (
       <View>
         <Text>{item.noidung}</Text>
@@ -54,7 +54,7 @@ const Home = () => {
   };
   const enderItem = (item) => {
     return (
-      <View style={{height: 200}}>
+      <View>
         <Text>{item.title}</Text>
         <FlatList data={item.data} renderItem={({item}) => renderItem1(item)} />
       </View>

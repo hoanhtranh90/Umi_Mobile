@@ -12,7 +12,6 @@ import {_global} from './src/utlis/global';
 
 import {Alert} from './src/components';
 
-
 UIManager.setLayoutAnimationEnabledExperimental &&
   UIManager.setLayoutAnimationEnabledExperimental(true);
 
