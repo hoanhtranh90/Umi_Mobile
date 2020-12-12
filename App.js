@@ -8,7 +8,7 @@
 
 import React from 'react';
 
-import Main from './components/VanBanDen/Main.js'
+import Main from './components/Work/Main'
 
 
 
