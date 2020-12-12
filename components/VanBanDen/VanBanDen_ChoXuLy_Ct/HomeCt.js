@@ -12,9 +12,9 @@ const HomeCt = ({ route, navigation }) => {
         {
             id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
             title: 'Thông tin văn bản',
-            // kihieu: datax.kihieu,
-            // trichyeu: datax.title,
-            // nguoiKy: datax.nguoiKy
+            kihieu: datax.kihieu,
+            trichyeu: datax.title,
+            nguoiKy: datax.nguoiKy
         },
         {
             id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
@@ -69,6 +69,7 @@ const HomeCt = ({ route, navigation }) => {
                     enderItem(item)
                 )}
             />
+            <Text>{DATA[0].nguoiKy}</Text>
         </SafeAreaView>
     );
 }

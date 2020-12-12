@@ -4,7 +4,7 @@ import { FlatList } from 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
 
-import HomeCt from './VanBanDen_ChoXuLy_Ct/HomeCt'
+import HomeCt from '../VanBanDen_ChoXuLy_Ct/HomeCt'
 
 // const ChoXuLy = () => {
 //     return (
@@ -27,7 +27,7 @@ const ChoXuLy = ({ navigation }) => {
         {
             title:"Title Bai Viet 2",
             kihieu:"125/CV-KHf",
-            nguoiKy:"Sang dz"
+            nguoiKy:"Sansasg dz"
         },
         {
             title:"Title Bai Viet 3",
