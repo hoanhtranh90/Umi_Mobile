@@ -10,7 +10,8 @@ import {UIManager} from 'react-native';
 import Navigator from './src/navigator';
 import {_global} from './src/utlis/global';
 
-import {Alert} from './src/components';
+import {Alert} from './src/components/index';
+
 
 UIManager.setLayoutAnimationEnabledExperimental &&
   UIManager.setLayoutAnimationEnabledExperimental(true);
