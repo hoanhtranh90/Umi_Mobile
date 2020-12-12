@@ -12,7 +12,7 @@ const Tab = createMaterialTopTabNavigator();
 
 
 
-function VbDenChoXuLy() {
+function VbDenChoXuLyTab() {
   return (
       
         <Tab.Navigator tabBarOptions={{
@@ -27,4 +27,4 @@ function VbDenChoXuLy() {
       );
 }
 
-export default VbDenChoXuLy;
+export default VbDenChoXuLyTab;

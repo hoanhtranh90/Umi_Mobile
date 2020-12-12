@@ -2,7 +2,7 @@
 // https://aboutreact.com/react-native-tab //
 import 'react-native-gesture-handler';
 import React from 'react';
-import VanBanDen_ChoXuLy from './menu/VanBanDen_ChoXuLy';
+import VbDenChoXuLyTab from './menu/VanBanDenTab';
 import HomeChoXuLyCt from './VanBanDen_ChoXuLy_Ct/HomeChoXuLyCt'
 import ScreenBottomMenuChoXuLy from './VanBanDen_ChoXuLy_Ct/ScreenBottomMenuChoXuLy/index'
 import { createStackNavigator } from '@react-navigation/stack';
@@ -24,7 +24,7 @@ function Main() {
   return (
     <NavigationContainer>
     <Stack.Navigator>
-    <Stack.Screen name="VanBanDen_ChoXuLy" component={VanBanDen_ChoXuLy} options={{headerShown: false}} />
+    <Stack.Screen name="VbDenChoXuLyTab" component={VbDenChoXuLyTab} options={{headerShown: false}} />
 
     <Stack.Screen name="HomeChoXuLyCt" component={HomeChoXuLyCt} options={{title:'Nội dung văn bản'}}/>
     <Stack.Screen name="ScreenBottomMenuChoXuLy" component={ScreenBottomMenuChoXuLy} options={{headerShown: false}} />
