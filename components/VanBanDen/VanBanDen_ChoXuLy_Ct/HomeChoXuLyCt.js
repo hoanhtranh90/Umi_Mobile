@@ -11,7 +11,7 @@ let check = true;
 //         </Stack.Navigator>
 //     )
 // }
-const HomeCt = ({ route, navigation }) => {
+const HomeChoXuLyCt = ({ route, navigation }) => {
     const datax = route ? route.params : null;
 
     const DATA = [
@@ -164,4 +164,4 @@ const HomeCt = ({ route, navigation }) => {
 }
 
 
-export default HomeCt;
+export default HomeChoXuLyCt;

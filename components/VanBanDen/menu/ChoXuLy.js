@@ -4,7 +4,7 @@ import { FlatList } from 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
 
-import HomeCt from '../VanBanDen_ChoXuLy_Ct/HomeCt'
+import HomeCt from '../VanBanDen_ChoXuLy_Ct/HomeChoXuLyCt'
 
 // const ChoXuLy = () => {
 //     return (
@@ -98,11 +98,13 @@ const ChoXuLy = ({ navigation }) => {
             renderItem={({ item }) => (
                 <TouchableOpacity //chuyen tab
         onPress={
-          () => navigation.navigate('HomeCt',{
+          () => navigation.navigate('HomeChoXuLyCt',{
             title:item.title,
             kihieu:item.kihieu,
             nguoiKy:item.nguoiKy
-          })
+          }
+          
+          )
         }>
         <View style={stylee.container}>
             <Text style={stylee.title}>{item.title}</Text>

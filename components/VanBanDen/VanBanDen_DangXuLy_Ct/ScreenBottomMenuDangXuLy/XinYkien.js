@@ -1,12 +1,12 @@
 import React from 'react'
 import { View,Text } from 'react-native';
 
-const XemLuong = () => {
+const XinYkien = () => {
 return(
     <View>
-        <Text>XemLuong</Text>
+        <Text>XinYkien</Text>
     </View>
 )
 }
 
-export default XemLuong;
+export default XinYkien;

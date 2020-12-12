@@ -40,8 +40,10 @@ const DangXuLy = ({ navigation }) => {
     return (
       <TouchableOpacity //chuyen tab
         onPress={
-          () => navigation.navigate('TiepNhan',{
-            title:item.title
+          () => navigation.navigate('HomeDangXuLyCt',{
+            title:item.title,
+            kihieu:item.kihieu,
+            nguoiKy:item.nguoiKy
           })
         }>
         <View style={stylee.container}>

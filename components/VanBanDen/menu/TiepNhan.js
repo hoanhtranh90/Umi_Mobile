@@ -26,12 +26,21 @@ const TiepNhan = ({ route,navigation }) => {
 const render=(item)=>{
     return (
     <View style={stylee.container}>
+        <TouchableOpacity //chuyen tab
+        onPress={
+          () => navigation.navigate('HomeTiepNhanCt',{
+            title:item.title,
+            kihieu:item.kihieu,
+            nguoiKy:item.nguoiKy
+          })
+        }>
         <Text style={stylee.title}>{item.title}</Text>
         <View style={stylee.kihieu}>
             <Text style={{color:"#4f4f4f"}}>Ký hiệu: <Text>{item.kihieu}</Text> </Text>
             <Text style={{paddingRight:10,color:'#4f4f4f',fontSize:14}}>15/01/2020 : 14:44:40</Text>
         </View>
         <Text style={{color:"#4f4f4f"}}><Text>Người ký: </Text><Text style={stylee.nguoiKy}>{item.nguoiKy}</Text></Text>
+        </TouchableOpacity>
     </View>
     )
 }

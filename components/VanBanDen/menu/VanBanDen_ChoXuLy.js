@@ -15,11 +15,13 @@ const Tab = createMaterialTopTabNavigator();
 function VbDenChoXuLy() {
   return (
       
-        <Tab.Navigator>
-          <Tab.Screen name="TiepNhan" component={TiepNhan} />
-          <Tab.Screen name="ChoXuLy" component={ChoXuLy} />
-          <Tab.Screen name="DangXuLy" component={DangXuLy} />
-          <Tab.Screen name="DaXuly" component={DaXuly} />
+        <Tab.Navigator tabBarOptions={{
+          labelStyle: { textTransform: 'none' }
+        }}>
+          <Tab.Screen name="TiepNhan" component={TiepNhan} options={{title:'Tiếp nhận'}}/>
+          <Tab.Screen name="ChoXuLy" component={ChoXuLy} options={{title:'Chờ xử lý'}} />
+          <Tab.Screen name="DangXuLy" component={DangXuLy} options={{title:'Đang xử lý'}} />
+          <Tab.Screen name="DaXuly" component={DaXuly} options={{title:'Đã xử lý'}} />
         </Tab.Navigator>
       
       );

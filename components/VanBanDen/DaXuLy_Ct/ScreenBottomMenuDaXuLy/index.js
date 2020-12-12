@@ -3,13 +3,11 @@ import { View, Text } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack'
 import XemLuong from './XemLuong'
 import TheoDoi from './TheoDoi'
-import TraLai from './TraLai'
-import XinYkien from './XinYkien'
 const Stack = createStackNavigator();
 
 
 
-const ScreenBottomMenuChoXuLy = ({ route }) => {
+const ScreenBottomMenuTiepNhan = ({ route }) => {
     let data = route ? route.params.screen : null;
     console.log(data)
 
@@ -43,36 +41,6 @@ const ScreenBottomMenuChoXuLy = ({ route }) => {
             </Stack.Navigator>
         )
     }
-    else if (data == "TraLai") {
-        return (
-            <Stack.Navigator>
-                <Stack.Screen name='TraLai' component={TraLai}
-                    options={{
-                        title: 'Trả lại văn bản',
-                        headerStyle: {
-                            backgroundColor: '#529ce5',
-                        },
-
-
-                    }} />
-            </Stack.Navigator>
-        )
-    }
-    else if (data == "XinYkien") {
-        return (
-            <Stack.Navigator>
-                <Stack.Screen name='XinYkien' component={XinYkien}
-                options={{
-                    title: 'Xin ý kiến',
-                    headerStyle: {
-                        backgroundColor: '#529ce5',
-                    },
-
-
-                }} />
-            </Stack.Navigator>
-        )
-    }
 }
 
-export default ScreenBottomMenuChoXuLy;
+export default ScreenBottomMenuTiepNhan;

@@ -1,12 +1,12 @@
 import React from 'react'
 import { View,Text } from 'react-native';
 
-const XemLuong = () => {
+const TheoDoi = () => {
 return(
     <View>
-        <Text>XemLuong</Text>
+        <Text>TheoDoi</Text>
     </View>
 )
 }
 
-export default XemLuong;
+export default TheoDoi;
