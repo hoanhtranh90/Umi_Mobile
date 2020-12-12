@@ -10,7 +10,7 @@ import HomeCt from '../VanBanDen_ChoXuLy_Ct/HomeCt'
 //     return (
   
 //         <Stack.Navigator >
-//           <Stack.Screen name="ChoXuLy" component={ChoXuLy1} options={{headerShown: false,tabBarVisible:false}} />
+//           <Stack.Screen name="ChoXuLy1" component={ChoXuLy1} options={{headerShown: false,tabBarVisible:false}} />
 //           <Stack.Screen name="HomeCt" component={HomeCt} options={{headerShown: false,tabBarVisible:false}}/>
 //         </Stack.Navigator>
      
