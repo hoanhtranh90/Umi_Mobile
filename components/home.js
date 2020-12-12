@@ -1,6 +1,5 @@
 import React from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, Image, StatusBar, Group } from 'react-native';
-import LOGOSVG from './../img/clipboard.svg'
 
 const DATA = [
   {
@@ -50,9 +49,9 @@ const Home = () => {
 
   
         <Image
-          style={{width:30,height:30,marginTop:8}}
+          style={{width:30,height:30,marginTop:6}}
           source={{
-            uri: 'https://reactnative.dev/img/tiny_logo.png',
+            uri: 'https://img.icons8.com/windows/2x/libre-office-suite.png',
           }}
         />
         <Text style={{fontSize:16,paddingBottom:5,paddingLeft:10,textAlignVertical:'center',width:'100%',borderBottomWidth:1,borderBottomColor:'#ebebeb'}}>

@@ -8,19 +8,16 @@
 
 import React from 'react';
 import Home from './components/home.js'
+import VbDenChoXuLy from './components/VanBanDen/VanBanDen_ChoXuLy.js'
+import Tes from './components/VanBanDen/Tes.js'
+import HomeCt from './components/VanBanDen/VanBanDen_ChoXuLy_Ct/HomeCt.js'
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+
 
 const App: () => React$Node = () => {
   return (
     <>
-      <Home/>
+      <Tes/>
     </>
   );
 };
