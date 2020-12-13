@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Button } from 'react-native'
-import CvDuocGiao from '../screen/stack/CvDuocGiao'
-import GiaoViec from '../screen/stack/GiaoViec'
+import CvDuocGiao from '../../screens/Work/CvDuocGiao'
+import GiaoViec from '../../screens/Work/GiaoViec'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { TextInput } from 'react-native-gesture-handler';
 

@@ -7,7 +7,7 @@ import {
 } from '@react-navigation/stack';
 import TabbarCongViec from './TabbarCongViec';
 import Stack_ChiTiet from './Stack_ChiTiet'
-import HomeCt from '../screen/stack/HomeCt'
+import HomeCt from '../../screens/Work/HomeCt'
 const Stack = createStackNavigator();
 StatusBar.setBarStyle('dark-content');
 export default function UserStack() {
