@@ -8,7 +8,6 @@ import {
 import ChoXuly from '../screens/stack/ChoXuLy';
 import DangXuLy from '../screens/stack/DangXuLy';
 import DaXuly from '../screens/stack/DaXuly';
-import home from '../home';
 import HomeCt from '../screens/stack/HomeCt';
 import VanBanDen_ChoXuLy from './TabbarVanBanDen_ChoXuLy';
 import TiepNhan from '../screens/stack/TiepNhan';

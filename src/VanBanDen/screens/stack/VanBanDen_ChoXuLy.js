@@ -6,8 +6,9 @@ import TiepNhan from './TiepNhan';
 import DangXuLy from './DangXuLy';
 import ChoXuLy from './ChoXuLy';
 import DaXuly from './DaXuly';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { NavigationContainer } from '@react-navigation/native'
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
 const Tab = createMaterialTopTabNavigator();
 
 

@@ -10,7 +10,6 @@ const RootStack = createStackNavigator();
 
 export default function Navigator(props) {
   return (
-    <NavigationContainer>
       <RootStack.Navigator
         screenOptions={{
           headerTitleAlign: 'center',
@@ -24,6 +23,5 @@ export default function Navigator(props) {
           }}
         />
       </RootStack.Navigator>
-    </NavigationContainer>
   );
 }
