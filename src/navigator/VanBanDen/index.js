@@ -10,18 +10,18 @@ const RootStack = createStackNavigator();
 
 export default function Navigator(props) {
   return (
-      <RootStack.Navigator
-        screenOptions={{
-          headerTitleAlign: 'center',
-          headerShown: true,
-        }}>
-        <RootStack.Screen
-          name={'Stack'}
-          component={Stack}
-          options={{
-            headerShown: false,
-          }}
-        />
-      </RootStack.Navigator>
+    <RootStack.Navigator
+      screenOptions={{
+        headerTitleAlign: 'center',
+        headerShown: true,
+      }}>
+      <RootStack.Screen
+        name={'Stack'}
+        component={Stack}
+        options={{
+          headerShown: false,
+        }}
+      />
+    </RootStack.Navigator>
   );
 }
