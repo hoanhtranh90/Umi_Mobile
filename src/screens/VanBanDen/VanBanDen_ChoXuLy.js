@@ -1,11 +1,11 @@
 // React Native Tab - Example using React Navigation V5 //
 // https://aboutreact.com/react-native-tab //
-import 'react-native-gesture-handler';
-import React from 'react';
-import TiepNhan from './TiepNhan';
-import DangXuLy from './DangXuLy';
-import ChoXuLy from './ChoXuLy';
-import DaXuly from './DaXuly';
+import 'react-native-gesture-handler'
+import React from 'react'
+import TiepNhan from './TiepNhan'
+import DangXuLy from './DangXuLy'
+import ChoXuLy from './ChoXuLy'
+import DaXuly from './DaXuly'
 import { NavigationContainer } from '@react-navigation/native'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 

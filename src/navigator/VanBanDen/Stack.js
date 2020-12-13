@@ -5,13 +5,13 @@ import {
   CardStyleInterpolators,
   // TransitionPresets,
 } from '@react-navigation/stack';
-import ChoXuly from '../screens/stack/ChoXuLy';
-import DangXuLy from '../screens/stack/DangXuLy';
-import DaXuly from '../screens/stack/DaXuly';
-import HomeCt from '../screens/stack/HomeCt';
+import ChoXuly from '../../screens/VanBanDen/TabbarScreen/ChoXuLy';
+import DangXuLy from '../../screens/VanBanDen/TabbarScreen/DangXuLy';
+import DaXuly from '../../screens/VanBanDen/TabbarScreen/DaXuly';
+import HomeCt from '../../screens/VanBanDen/TabbarScreenCt/HomeCt';
 import VanBanDen_ChoXuLy from './TabbarVanBanDen_ChoXuLy';
-import TiepNhan from '../screens/stack/TiepNhan';
-import Stack_ChiTiet from './Stack_ChiTiet'
+import TiepNhan from '../../screens/VanBanDen/TabbarScreen/TiepNhan';
+import Stack_ChiTiet from './Stack_ChiTiet';
 
 const Stack = createStackNavigator();
 StatusBar.setBarStyle('dark-content');
@@ -24,7 +24,6 @@ export default function UserStack() {
         gestureDirection: 'horizontal',
         headerTitleAlign: 'center',
       }}>
-
       <Stack.Screen
         name={'VanBanDen_ChoXuLy'}
         component={VanBanDen_ChoXuLy}
@@ -64,22 +63,21 @@ export default function UserStack() {
           gestureEnabled: false,
         }}
       />
-      
       <Stack.Screen
         name={'Stack_ChiTiet'}
         component={Stack_ChiTiet}
         options={{
           headerShown: false,
         }}
-      /> 
+      />
       <Stack.Screen
         name={'HomeCt'}
         component={HomeCt}
         options={{
-          title:'Chi tiết văn bản',
+          title: 'Chi tiết văn bản',
           headerShown: true,
         }}
-      /> 
+      />
     </Stack.Navigator>
   );
 }
