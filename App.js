@@ -10,13 +10,15 @@ import React from 'react';
 
 import Main from './components/Work/Main'
 
+import Navigator from './src/navigator/index'
+
 
 
 
 const App: () => React$Node = () => {
   return (
     <>
-      <Main/>
+      <Navigator/>
     </>
   );
 };

@@ -8,40 +8,39 @@ import {
 } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 
-const CvDuocGiao = ({ route,navigation }) => {
+const TiepNhan = ({ route,navigation }) => {
   const  title  = route ? route.params:null;
   const data = [
     {
-        title:"Rà soat sản phẩm",
-        data:'00/00/0000',
-        nguoiGiao:'Nguyễn Văn A',
-        status:'done',
+        title:"Tiep nhan 1",
+        kihieu:"125/CV-KHf",
+        nguoiKy:"Sang dz"
     },
     {
-        title:"Giao việc 2",
-        data:'00/00/0000',
-        nguoiGiao:'Nguyễn Văn A',
-        status:'new',
+        title:"Tiep nhan 2",
+        kihieu:"125/CV-KHf",
+        nguoiKy:"Sang dz"
     }
 ]
 
 const render=(item)=>{
     return (
     <View style={stylee.container}>
-        <TouchableOpacity //chuyen tab
+         <TouchableOpacity //chuyen tab
         onPress={
-          () => navigation.navigate('HomeTiepNhanCt',{
-            title:item.title,
-            kihieu:item.kihieu,
-            nguoiKy:item.nguoiKy
+          () => navigation.navigate('HomeCt',{
+            title: item.title,
+                  kihieu: item.kihieu,
+                  nguoiKy: item.nguoiKy,
+                  screen:'TiepNhan'
           })
         }>
         <Text style={stylee.title}>{item.title}</Text>
         <View style={stylee.kihieu}>
-            <Text style={{color:"#4f4f4f"}}>Ký hiệu: <Text>{item.data}</Text> </Text>
-            <Text style={{paddingRight:10,color:'#4f4f4f',fontSize:14}}>{item.status}</Text>
+            <Text style={{color:"#4f4f4f"}}>Ký hiệu: <Text>{item.kihieu}</Text> </Text>
+            <Text style={{paddingRight:10,color:'#4f4f4f',fontSize:14}}>15/01/2020 : 14:44:40</Text>
         </View>
-        <Text style={{color:"#4f4f4f"}}><Text>Người giao: </Text><Text style={stylee.nguoiKy}>{item.nguoiGiao}</Text></Text>
+        <Text style={{color:"#4f4f4f"}}><Text>Người ký: </Text><Text style={stylee.nguoiKy}>{item.nguoiKy}</Text></Text>
         </TouchableOpacity>
     </View>
     )
@@ -83,4 +82,4 @@ return (
     </>
 );
 }
-export default CvDuocGiao;
+export default TiepNhan;
