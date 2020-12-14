@@ -15,7 +15,8 @@ import Stack_ChiTiet from './Stack_ChiTiet';
 
 const Stack = createStackNavigator();
 StatusBar.setBarStyle('dark-content');
-export default function UserStack() {
+export default function UserStack({navigation}) {
+
   return (
     <Stack.Navigator
       screenOptions={{

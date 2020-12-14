@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, Image, StatusBar, Group } from 'react-native';
+import React, { useState } from 'react';
+import { SafeAreaView, View, FlatList, StyleSheet, Text, Modal, TouchableOpacity, Button, TouchableWithoutFeedback } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack'
 const Stack = createStackNavigator()
 
 const HomeCt = ({ route, navigation }) => {
     const datax = route ? route.params : null;
-
+    const [show,setShow] = useState(false)
     const DATA = [
         {
             id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -41,15 +41,15 @@ const HomeCt = ({ route, navigation }) => {
             borderLeftColor: '#ebebeb'
         },
 
-        containerTN_DXL:{
-            width:'100%',
+        containerTN_DXL: {
+            width: '100%',
             flex: 1,
             flexDirection: 'row',
-            justifyContent:'center',
+            justifyContent: 'center',
             position: 'absolute',
             bottom: 0
         },
-        itemTN_DXL:{
+        itemTN_DXL: {
             height: 50,
             width: 100,
             backgroundColor: '#fff',
@@ -75,7 +75,37 @@ const HomeCt = ({ route, navigation }) => {
         },
         textVb: {
             fontSize: 16
-        }
+        },
+        modalItem: {
+            height: 50,
+            flexDirection:'row',
+            justifyContent:'space-between',
+            width: '100%',
+            padding: 15,
+            borderBottomWidth: 1,
+            borderBottomColor: '#ebebeb'
+        
+          },
+          modalItemBt:{
+            height: 50,
+            flexDirection:'row',
+            justifyContent:'flex-end',
+            width: '100%',
+            padding: 7,
+            paddingRight:15,
+            borderBottomWidth: 1,
+            borderBottomColor: '#ebebeb'
+          },
+          modal: {
+            flex: 1,
+            justifyContent:'flex-end',
+            paddingBottom:'13%',
+            backgroundColor: 'rgba(0,0,0,0.5)',
+          },
+          modalInner: {
+            height: 150,
+            backgroundColor: '#FFF',
+          },
     });
     if (datax.screen == 'ChoXuLy') {
         return (
@@ -163,7 +193,42 @@ const HomeCt = ({ route, navigation }) => {
                             })
                         }
                     }>Xin Ý kiến</Text></View>
-                    <View style={style.item}><Text style={style.text}>thêm</Text></View>
+                    <View style={style.item}>
+                        <View>
+                            <Modal visible={show}
+                                transparent={true}
+                                onRequestClose={() => setShow(false)}
+                                closeOnClick={true}
+                            >
+                                <TouchableWithoutFeedback onPress={()=>setShow(false)}>
+                                <View style={style.modal} > 
+                                
+                                    <View style={style.modalInner} >
+                                        <TouchableOpacity onPress={() => onSetShowStart()}>
+                                            <View style={style.modalItem}>
+                                                <Text>Chuyển xử lý</Text>
+                                            </View>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity onPress={() => { }}>
+                                            <View style={style.modalItem}>
+                                                <Text>Hoàn thành</Text>
+                                            </View>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity onPress={() => { }}>
+                                            <View style={style.modalItem}>
+                                                <Text>Nhận để biết</Text>
+                                            </View>
+                                        </TouchableOpacity>
+                                    </View>
+
+                                </View>
+                                </TouchableWithoutFeedback>
+                            </Modal>
+                        </View>
+                        <TouchableOpacity onPress={()=>setShow(true)}>
+                        <Text style={style.text}>thêm</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </SafeAreaView>
         );

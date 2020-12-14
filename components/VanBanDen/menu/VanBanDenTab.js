@@ -6,25 +6,38 @@ import TiepNhan from './TiepNhan';
 import DangXuLy from './DangXuLy';
 import ChoXuLy from './ChoXuLy';
 import DaXuly from './DaXuly';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { NavigationContainer } from '@react-navigation/native'
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import {NavigationContainer} from '@react-navigation/native';
 const Tab = createMaterialTopTabNavigator();
-
-
 
 function VbDenChoXuLyTab() {
   return (
-      
-        <Tab.Navigator tabBarOptions={{
-          labelStyle: { textTransform: 'none' }
-        }}>
-          <Tab.Screen name="TiepNhan" component={TiepNhan} options={{title:'Tiếp nhận'}}/>
-          <Tab.Screen name="ChoXuLy" component={ChoXuLy} options={{title:'Chờ xử lý'}} />
-          <Tab.Screen name="DangXuLy" component={DangXuLy} options={{title:'Đang xử lý'}} />
-          <Tab.Screen name="DaXuly" component={DaXuly} options={{title:'Đã xử lý'}} />
-        </Tab.Navigator>
-      
-      );
+    <Tab.Navigator
+      tabBarOptions={{
+        labelStyle: {textTransform: 'none'},
+      }}>
+      <Tab.Screen
+        name="TiepNhan"
+        component={TiepNhan}
+        options={{title: 'Tiếp nhận'}}
+      />
+      <Tab.Screen
+        name="ChoXuLy"
+        component={ChoXuLy}
+        options={{title: 'Chờ xử lý'}}
+      />
+      <Tab.Screen
+        name="DangXuLy"
+        component={DangXuLy}
+        options={{title: 'Đang xử lý'}}
+      />
+      <Tab.Screen
+        name="DaXuly"
+        component={DaXuly}
+        options={{title: 'Đã xử lý'}}
+      />
+    </Tab.Navigator>
+  );
 }
 
 export default VbDenChoXuLyTab;

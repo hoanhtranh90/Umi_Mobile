@@ -31,13 +31,6 @@ export default function StackChiTiet() {
           headerShown: false,
         }}
       />
-      {/* <Stack.Screen
-        name={'Tabbar'}
-        component={Tabbar}
-        options={{
-          headerShown: false,
-        }}
-      /> */}
       <Stack.Screen
         name={'TheoDoi'}
         component={TheoDoi}

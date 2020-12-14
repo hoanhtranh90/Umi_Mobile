@@ -11,6 +11,8 @@ import {
   Button,
 } from 'react-native';
 
+import Icon from 'react-native-vector-icons/Ionicons';
+
 
 const DATA = [
   {
@@ -92,6 +94,17 @@ const Home1 = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
+<View style={styles.headerBar}>
+        <View >
+        <Icon.Button name="ios-menu" size={30} backgroundColor="#1094F4" onPress={() => navigation.openDrawer()}></Icon.Button>
+        </View>
+        <View>
+          <Text style={{paddingRight: 25, paddingTop: 10, fontSize: 18}}>
+            Trang chủ
+          </Text>
+        </View>
+        <View />
+      </View>
       <FlatList
         data={DATA}
         keyExtractor={(item) => item.id}

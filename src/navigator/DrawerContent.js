@@ -96,7 +96,7 @@ export function DrawerContent(props) {
                 <DrawerItem
 
                     label="Thiết lập"
-                    onPress={() => { }}
+                    onPress={() => { props.navigation.navigate('Setting')}}
                 />
             </Drawer.Section>
         </View>

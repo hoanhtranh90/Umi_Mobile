@@ -4,9 +4,7 @@ import MyDrawer from './MyDrawer';
 
 const Home = () => {
   return (
-    <NavigationContainer>
       <MyDrawer />
-    </NavigationContainer>
   );
 };
 

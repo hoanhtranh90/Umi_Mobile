@@ -8,7 +8,7 @@ import Stack from './Stack';
 const RootStack = createStackNavigator();
 // const BotStack = createBottomTabNavigator();
 
-export default function Navigator(props) {
+export default function VanBanDi(props) {
   return (
       <RootStack.Navigator
         screenOptions={{
