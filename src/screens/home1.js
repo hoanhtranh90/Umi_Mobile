@@ -92,17 +92,6 @@ const Home1 = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.headerBar}>
-        <View style={{width: 30}}>
-          <Button title="O" onPress={() => navigation.openDrawer()} />
-        </View>
-        <View>
-          <Text style={{paddingRight: 25, paddingTop: 10, fontSize: 18}}>
-            Trang chủ
-          </Text>
-        </View>
-        <View />
-      </View>
       <FlatList
         data={DATA}
         keyExtractor={(item) => item.id}
@@ -116,7 +105,6 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#ebebeb',
     flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
   },
   headerBar: {
     height: 50,
