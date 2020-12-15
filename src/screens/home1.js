@@ -99,7 +99,7 @@ const Home1 = ({navigation}) => {
         <Icon.Button name="ios-menu" size={30} backgroundColor="#1094F4" onPress={() => navigation.openDrawer()}></Icon.Button>
         </View>
         <View>
-          <Text style={{paddingRight: 25, paddingTop: 10, fontSize: 18}}>
+          <Text style={{ fontSize: 18,lineHeight:50,paddingRight:'12%'}}>
             Trang chủ
           </Text>
         </View>
@@ -124,7 +124,6 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: '#1094F4',
     flexDirection: 'row',
-    flex: 0,
     justifyContent: 'space-between',
   },
   item: {

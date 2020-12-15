@@ -4,6 +4,8 @@ import CongViec from './Work/index';
 import VanBanDi from './VanBanDi/index'
 import Home1 from '../screens/home1';
 import Setting from './Setting/index';
+import BaoCao from './BaoCao/index';
+import TruyenThong from './TruyenThongNoiBo/index';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { DrawerContent } from './DrawerContent'
 
@@ -51,12 +53,12 @@ function MyDrawer() {
       />
       <Drawer.Screen
         name="BaoCao"
-        component={Home1}
+        component={BaoCao}
         options={{ title: 'Báo cáo thống kê' }}
       />
       <Drawer.Screen
         name="TruyenThong"
-        component={Home1}
+        component={TruyenThong}
         options={{ title: 'Truyền thông' }}
       />
       <Drawer.Screen

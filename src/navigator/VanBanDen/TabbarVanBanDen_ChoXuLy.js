@@ -6,7 +6,6 @@ import {
   TouchableWithoutFeedback,
   StyleSheet,
   TouchableOpacity,
-  Platform,
   Modal,
 } from 'react-native';
 import TiepNhan from '../../screens/VanBanDen/TabbarScreen/TiepNhan';
@@ -15,63 +14,67 @@ import DangXuLy from '../../screens/VanBanDen/TabbarScreen/DangXuLy';
 import DaXuly from '../../screens/VanBanDen/TabbarScreen/DaXuly';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import moment from 'moment';
-import PickerCustom from '../../components/PickerCustom/index'
-import Icon from 'react-native-vector-icons/Ionicons';
-import { set } from 'react-native-reanimated';
+import DateTimePickerModal from "react-native-modal-datetime-picker";
 
+import Icon from 'react-native-vector-icons/Ionicons';
 const Tab = createMaterialTopTabNavigator();
 
 export default function VbDenChoXuLy({ navigation }) {
-  const [show, setShow] = useState(false)
+  const [showModal, setShowModal] = useState(false);
+
   const [startDate, setStartDate] = useState((Date.now() / 1000) - 604800 | 0);
   const [endDate, setendDate] = useState(Date.now() / 1000 | 0);
+  
 
-  const [showStart, setShowStart] = useState(false);
-  const [showEnd, setShowEnd] = useState(false);
+  const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
 
-  const [startDateChange, setStartDateChange] = useState(new Date());
-  const [endDateChange, setEndDateChange] = useState(new Date());
+  const [pick,setPick]=useState(false);
 
-  const onHideModal = () => {
-    setShowStart(false);
+  const showDatePicker = (e) => {
+    if(e==1) setPick(true);
+    setDatePickerVisibility(true);
+  };
+
+  const hideDatePicker = () => {
+    setDatePickerVisibility(false);
+    setPick(false)
+  };
+
+  const handleConfirm = (date) => {
+    if(pick) {
+      setStartDate((date-1)/1000 | 0)      
+    }
+    else {
+      setendDate((date-1)/1000 | 0)
+    }
+    hideDatePicker();
   };
 
 
-
-  const onSetShowStart = () => {
-    setShowStart(true);
-  };
-
-
-  const onChangeDate = (event, selectedDay) => {
-    const currentDay = selectedDay || startDateChange;
-    setShowStart(Platform.OS === 'ios');
-    setStartDate((currentDay-1)/1000 | 0);
-  };
 
 
   return (
     <>
       <View style={styles.container}>
-        <Modal visible={show}
+        <Modal visible={showModal}
           transparent={true}
         >
-          <TouchableWithoutFeedback onPress={()=>setShow(false)}>
+          <TouchableWithoutFeedback onPress={()=>setShowModal(false)}>
           <View style={styles.modal}>
             <View style={styles.modalInner}>
-              <TouchableOpacity onPress={()=>onSetShowStart()}>
+              <TouchableOpacity  onPress={()=>showDatePicker(1)}>
               <View style={styles.modalItem}>
                 <Text>Từ ngày</Text>
                 <Text>{moment.unix(startDate).format('DD/MM/YYYY')}</Text>
               </View>
               </TouchableOpacity>
-              <TouchableOpacity onPress={()=>{}}>
+              <TouchableOpacity onPress={()=>showDatePicker(2)}>
               <View style={styles.modalItem}>
                 <Text>Đến ngày</Text>
                 <Text>{moment.unix(endDate).format('DD/MM/YYYY')}</Text>
               </View>
               </TouchableOpacity>
-              <View style={styles.modalItemBt} ><Button title="Đồng ý" onPress={()=>setShow(false)}/></View>
+              <View style={styles.modalItemBt} ><Button title="Đồng ý" onPress={()=>setShowModal(false)}/></View>
             </View>
           </View>
           </TouchableWithoutFeedback>
@@ -86,15 +89,13 @@ export default function VbDenChoXuLy({ navigation }) {
           </Text>
         </View>
 
-        <Icon.Button name="ios-menu" size={30} backgroundColor="#1094F4" onPress={() => {setShow(true)}}></Icon.Button>
+        <Icon.Button name="ios-menu" size={30} backgroundColor="#1094F4" onPress={() => setShowModal(true)}></Icon.Button>
       </View>
-      <PickerCustom
-        value={startDateChange}
-        onChange={onChangeDate}
-        mode={'date'}
-        show={showStart}
-        minimumDate={new Date()}
-        onHideModal={onHideModal}
+      <DateTimePickerModal
+        isVisible={isDatePickerVisible}
+        mode="date"
+        onConfirm={handleConfirm}
+        onCancel={hideDatePicker}
       />
 
       <VbDenChoXuLy1 />

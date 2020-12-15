@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 const Tab = createMaterialTopTabNavigator();
 
-export default function MenuSetting({ navigation }) {
+export default function MenuBaoCao({ navigation }) {
     return (
         <>
             <View style={styles.headerBar}>
@@ -13,87 +13,104 @@ export default function MenuSetting({ navigation }) {
                     <Icon.Button name="ios-menu" size={30} backgroundColor="#1094F4" onPress={() => navigation.openDrawer()}></Icon.Button>
                 </View>
                 <View>
-                    <Text style={{ fontSize: 18,lineHeight:50,paddingRight:'15%'}}>
-                        Cài đặt
+                    <Text style={{ fontSize: 18, lineHeight: 50, paddingRight: '15%' }}>
+                        Báo cáo
           </Text>
                 </View>
                 <View />
             </View>
 
-            <MenuSt />
+            <SafeAreaView style={{ backgroundColor: '#ebebeb' }}>
+            <View>
+                <Text style={styles.title}>Báo cáo theo cá nhân</Text>
+                <View style={{ backgroundColor: '#fff' }}>
+                    <TouchableOpacity onPress={()=>navigation.navigate('StackChiTiet',{
+                        screen:'THVbDenCn'
+                    })}>
+                    <View style={styles.item}>
+                        <Icon name="person" size={25} backgroundColor='black' style={{ paddingTop: 5, paddingLeft: 10 }}></Icon>
+                        <Text style={styles.itemText}>Tổng hợp văn bản đến</Text>
+                    </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate('StackChiTiet',{
+                        screen:'THVbDiCn'
+                    })}>
+                    <View style={styles.item}>
+                        <Icon name="person" size={25} backgroundColor='black' style={{ paddingTop: 5, paddingLeft: 10 }}></Icon>
+                        <Text style={styles.itemText}>Tổng hợp văn bản đi</Text>
+                    </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate('StackChiTiet',{
+                        screen:'CvDuocGiaoCn'
+                    })}>
+                    <View style={styles.item}>
+                        <Icon name="person" size={25} backgroundColor='black' style={{ paddingTop: 5, paddingLeft: 10 }}></Icon>
+                        <Text style={styles.itemText}>Công việc được giao</Text>
+                    </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate('StackChiTiet',{
+                        screen:'GiaoViecCn'
+                    })}>
+                    <View style={styles.item}>
+                        <Icon name="person" size={25} backgroundColor='black' style={{ paddingTop: 5, paddingLeft: 10 }}></Icon>
+                        <Text style={styles.itemText}>Giao việc</Text>
+                    </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate('StackChiTiet',{
+                        screen:'CvDangKyCn'
+                    })}>
+                    <View style={styles.item}>
+                        <Icon name="person" size={25} backgroundColor='black' style={{ paddingTop: 5, paddingLeft: 10 }}></Icon>
+                        <Text style={styles.itemText}>Công việc đang ký</Text>
+                    </View>
+                    </TouchableOpacity>
+                </View>
+            </View>
+            <View>
+                <Text style={styles.title}>Báo cáo theo đơn vị</Text>
+                <View style={{ backgroundColor: '#fff' }}>
+                    <TouchableOpacity onPress={()=>navigation.navigate('StackChiTiet',{
+                        screen:'THVbDen'
+                    })}>
+                    <View style={styles.item}>
+                        <Icon name="person" size={25} backgroundColor='black' style={{ paddingTop: 5, paddingLeft: 10 }}></Icon>
+                        <Text style={styles.itemText}>Thông tin ứng dụng</Text>
+                    </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate('StackChiTiet',{
+                        screen:'THVbDen'
+                    })}>
+                    <View style={styles.item}>
+                        <Icon name="person" size={25} backgroundColor='black' style={{ paddingTop: 5, paddingLeft: 10 }}></Icon>
+                        <Text style={styles.itemText}>Sắp xếp menu</Text>
+                    </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate('StackChiTiet',{
+                        screen:'THVbDen'
+                    })}>
+                    <View style={styles.item}>
+                        <Icon name="person" size={25} backgroundColor='black' style={{ paddingTop: 5, paddingLeft: 10 }}></Icon>
+                        <Text style={styles.itemText}>Thay đổi ngôn ngữ</Text>
+                    </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate('StackChiTiet',{
+                        screen:'THVbDen'
+                    })}>
+                    <View style={styles.item}>
+                        <Icon name="person" size={25} backgroundColor='black' style={{ paddingTop: 5, paddingLeft: 10 }}></Icon>
+                        <Text style={styles.itemText}>Thay đổi theme</Text>
+                    </View>
+                    </TouchableOpacity>
+
+                </View>
+            </View>
+           
+        </SafeAreaView>
         </>
     )
 
 }
 
-function MenuSt() {
-    return (
-
-        <SafeAreaView style={{ backgroundColor: '#ebebeb' }}>
-            <View>
-                <Text style={styles.title}>Tài khoản</Text>
-                <View style={{ backgroundColor: '#fff' }}>
-                    <View style={styles.item}>
-                        <Icon name="person" size={25} backgroundColor='black' style={{ paddingTop: 5, paddingLeft: 10 }}></Icon>
-
-                        <Text style={styles.itemText}>
-                            Thông tin cá nhân</Text>
-                    </View>
-                    <View style={styles.item}>
-                        <Icon name="person" size={25} backgroundColor='black' style={{ paddingTop: 5, paddingLeft: 10 }}></Icon>
-                        <Text style={styles.itemText}>Đổi mật khẩu</Text>
-                    </View>
-
-                </View>
-            </View>
-            <View>
-                <Text style={styles.title}>Ứng dụng</Text>
-                <View style={{ backgroundColor: '#fff' }}>
-                    <View style={styles.item}>
-                        <Icon name="person" size={25} backgroundColor='black' style={{ paddingTop: 5, paddingLeft: 10 }}></Icon>
-                        <Text style={styles.itemText}>Thông tin ứng dụng</Text>
-                    </View>
-                    <View style={styles.item}>
-                        <Icon name="person" size={25} backgroundColor='black' style={{ paddingTop: 5, paddingLeft: 10 }}></Icon>
-                        <Text style={styles.itemText}>Sắp xếp menu</Text>
-                    </View>
-                    <View style={styles.item}>
-                        <Icon name="person" size={25} backgroundColor='black' style={{ paddingTop: 5, paddingLeft: 10 }}></Icon>
-                        <Text style={styles.itemText}>Thay đổi ngôn ngữ</Text>
-                    </View>
-                    <View style={styles.item}>
-                        <Icon name="person" size={25} backgroundColor='black' style={{ paddingTop: 5, paddingLeft: 10 }}></Icon>
-                        <Text style={styles.itemText}>Thay đổi theme</Text>
-                    </View>
-
-                </View>
-            </View>
-            <View>
-                <Text style={styles.title}>Khác</Text>
-                <View style={{ backgroundColor: '#fff' }}>
-                    <View style={styles.item}>
-                        <Icon name="person" size={25} backgroundColor='black' style={{ paddingTop: 5, paddingLeft: 10 }}></Icon>
-                        <Text style={styles.itemText}>Chia sẻ</Text>
-                    </View>
-                    <View style={styles.item}>
-                        <Icon name="person" size={25} backgroundColor='black' style={{ paddingTop: 5, paddingLeft: 10 }}></Icon>
-                        <Text style={styles.itemText}>Góp ý</Text>
-                    </View>
-                    <View style={styles.item}>
-                        <Icon name="person" size={25} backgroundColor='black' style={{ paddingTop: 5, paddingLeft: 10 }}></Icon>
-                        <Text style={styles.itemText}>Chính sách cài đặt</Text>
-                    </View>
-
-                </View>
-            </View>
-            <View style={styles.screenContainer}>
-                <AppButton title="Đăng xuất" size="sm"/>
-            </View>
-        </SafeAreaView>
-
-    );
-
-}
 
 const styles = StyleSheet.create({
     headerBar: {
@@ -120,21 +137,21 @@ const styles = StyleSheet.create({
         paddingLeft: 8,
         fontSize: 16
     },
-    screenContainer:{
-        flex:0,
-        paddingTop:'50%'
+    screenContainer: {
+        flex: 0,
+        paddingTop: '50%'
     },
-    appButtonContainer:{
-        backgroundColor:'#fff',
-        height:50,
-        paddingTop:10
+    appButtonContainer: {
+        backgroundColor: '#fff',
+        height: 50,
+        paddingTop: 10
     },
     appButtonText: {
         fontSize: 18,
         color: "red",
         alignSelf: "center",
-      }
-    
+    }
+
 
 })
 const AppButton = ({ onPress, title }) => (
