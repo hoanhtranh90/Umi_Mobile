@@ -43,16 +43,10 @@ export default function VbDenChoXuLy({ navigation }) {
   };
 
 
-  const onCompleteStart = () => {
-    setStartDate(startDateChange);
-    setShowStart(false);
-  };
-
   const onChangeDate = (event, selectedDay) => {
     const currentDay = selectedDay || startDateChange;
     setShowStart(Platform.OS === 'ios');
-    console.log(currentDay);
-    setStartDateChange(currentDay);
+    setStartDate((currentDay-1)/1000 | 0);
   };
 
 
@@ -97,7 +91,6 @@ export default function VbDenChoXuLy({ navigation }) {
       <PickerCustom
         value={startDateChange}
         onChange={onChangeDate}
-        onPress={onCompleteStart}
         mode={'date'}
         show={showStart}
         minimumDate={new Date()}
