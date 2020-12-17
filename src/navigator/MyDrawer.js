@@ -14,20 +14,20 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import LichHop from './LichHop';
 
-import Header from '../shared/headerHome'
+import {connect} from 'react-redux'
 
 
 const Drawer = createDrawerNavigator();
 const HomeStack = createStackNavigator();
 
 
-function MyDrawer() {
+function MyDrawer(prop) {
 
 
 
 
   return (
-    <Drawer.Navigator initialRouteName="Home1" drawerContent={props => <DrawerContent {...props} />}>
+    <Drawer.Navigator initialRouteName="Home1" drawerContent={(props)=><DrawerContent {...props} data={prop.data}/>}>
       <Drawer.Screen
         name='Home1'
         component={Home1}
@@ -81,119 +81,18 @@ function MyDrawer() {
       /> */}
     </Drawer.Navigator>
   );
-// }
-// const HomeStackScreen = ({ navigation }) => (
-//   <HomeStack.Navigator screenOptions={{
-//     headerStyle: {
-//       backgroundColor: '#009387',
-//     },
-//     headerTitleAlign: 'center',
-//     headerTintColor: '#fff',
-
-//   }}>
-//     <HomeStack.Screen name="Home" component={Home1} options={{
-//       title: 'Trang chủ',
-      
-//       headerLeft: () => (
-//         <Icon.Button name="ios-menu" size={25} backgroundColor="#009387" onPress={() => navigation.openDrawer()}></Icon.Button>
-//       )
-//     }} />
-//   </HomeStack.Navigator>
-// );
-// const VanBanDenStackScreen = ({ navigation }) => {
-//   const [startDate, setStartDate] = useState(new Date());
-//   const [showStart, setShowStart] = useState(false);
-//   const [startDateChange, setStartDateChange] = useState(new Date());
-//   const onHideModal = () => {
-//     setShowStart(false);
-//   };
-  
-//   const onSetShowStart = () => {
-//     setShowStart(true);
-//   };
-//   const onCompleteStart = () => {
-//     setStartDate(startDateChange);
-//     setShowStart(false);
-//   };
-//   const onChangeDate = (event, selectedDay) => {
-//     const currentDay = selectedDay || startDateChange;
-//     setShowStart(Platform.OS === 'ios');
-//     console.log(currentDay);
-//     setStartDateChange(currentDay);
-//   };
-//   const [endDate, setEndDate] = useState(
-//     moment(new Date()).format('DD/MM/YYYY'),
-//   );
-//   const [endDateChange, setEndDateChange] = useState('');
-
-// return (
-//   <HomeStack.Navigator screenOptions={{
-//     headerStyle: {
-//       backgroundColor: '#009387',
-//     },
-//     headerTitleAlign: 'center',
-//     headerTintColor: '#fff',
-
-//   }}>
-    
-//     <HomeStack.Screen name="VanBanDenStackScreen" component={Navigation} options={{
-//       title: 'Văn bản đến',
-//       headerLeft: () => (
-//         <Icon.Button name="ios-menu" size={25} backgroundColor="#009387" onPress={() => navigation.openDrawer()}></Icon.Button>
-//       ),
-//       headerRight: () => (
-//         <>
-//         <Icon.Button name="ios-person" size={25} backgroundColor="#009387" onPress={onSetShowStart}></Icon.Button>
-
-//         <PickerCustom
-//           value={startDateChange}
-//           onChange={onChangeDate}
-//           onPress={onCompleteStart}
-//           mode={'date'}
-//           show={showStart}
-//           minimumDate={new Date()}
-//           onHideModal={onHideModal}
-//       />
-//       </>
-//       )
-//     }} />
-//   </HomeStack.Navigator>
-// )
-// };
-// const VanBanDiStackScreen = ({ navigation }) => (
-//   <HomeStack.Navigator screenOptions={{
-//     headerStyle: {
-//       backgroundColor: '#009387',
-//     },
-//     headerTitleAlign: 'center',
-//     headerTintColor: '#fff',
-
-//   }}>
-//     <HomeStack.Screen name="VanBanDiStackScreen" component={VanBanDi} options={{
-//       title: 'Văn bản đi',
-//       headerLeft: () => (
-//         <Icon.Button name="ios-menu" size={25} backgroundColor="#009387" onPress={() => navigation.openDrawer()}></Icon.Button>
-//       )
-//     }} />
-//   </HomeStack.Navigator>
-// );
-// const CongViecStackScreen = ({ navigation }) => (
-//   <HomeStack.Navigator screenOptions={{
-//     headerStyle: {
-//       backgroundColor: '#009387',
-//     },
-//     headerTitleAlign: 'center',
-//     headerTintColor: '#fff',
-
-//   }}>
-//     <HomeStack.Screen name="CongViecStackScreen" component={CongViec} options={{
-//       title: 'Công việc',
-//       headerLeft: () => (
-//         <Icon.Button name="ios-menu" size={25} backgroundColor="#009387" onPress={() => navigation.openDrawer()}></Icon.Button>
-//       )
-//     }} />
-//   </HomeStack.Navigator>
-// );
-
     }
-export default MyDrawer;
+
+    const mapDispatchToProps = {
+
+    };
+
+const mapStateToProps = (state) => {
+    return {
+      data:state
+
+    };
+  };
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(MyDrawer);
+

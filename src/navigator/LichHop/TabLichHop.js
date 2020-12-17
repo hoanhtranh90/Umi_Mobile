@@ -15,7 +15,7 @@ export default function TabLichHop({ navigation }) {
             </View>
         </View>
 
-            <View><Text>Helo World</Text></View>
+            <View><Text>Agenda here</Text></View>
         </>
     )
 }

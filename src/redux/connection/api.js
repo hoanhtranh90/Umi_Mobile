@@ -6,7 +6,6 @@ export function _POST(url, data, token, loading = true) {
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json',
-      Authorization: token,
     },
     body: JSON.stringify(data),
   })
@@ -26,7 +25,7 @@ export function _PUT(url, data, token) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: ' Bearer ' + token,
+      Authorization:token,
     },
     body: JSON.stringify(data),
   }).then((res) => res.json());
@@ -40,7 +39,7 @@ export function _GET(url, token, loading) {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: ' Bearer ' + token,
+      Authorization:token,
     },
   })
     .then((res) => res.json())

@@ -1,11 +1,11 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+
 import MyDrawer from './MyDrawer';
 
-const Home = () => {
+ const Home = (props) => {
   return (
-      <MyDrawer />
+      <MyDrawer data={props.data} />
   );
 };
-
 export default Home;
+

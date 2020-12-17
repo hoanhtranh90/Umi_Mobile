@@ -23,16 +23,11 @@ const Index = (props) => {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{
     headerShown: false
-  }}>
-      
+  }}> 
       {
       !loginSuccess ? <Stack.Screen name="SignInScreen" component={SignInScreen} /> :
       <Stack.Screen name="Home" component={Home}  /> 
       }
-      
-
-      
-
     </Stack.Navigator>
     </NavigationContainer>
     </>

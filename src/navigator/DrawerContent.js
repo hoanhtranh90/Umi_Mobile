@@ -19,7 +19,7 @@ import {
 
 
 export function DrawerContent(props) {
-
+    // console.log(props.data.authen.data.username)
     const paperTheme = useTheme();
 
 
@@ -36,8 +36,8 @@ export function DrawerContent(props) {
                                 size={50}
                             />
                             <View style={{ marginLeft: 15, flexDirection: 'column' }}>
-                                <Title style={styles.title}>Sang khac</Title>
-                                <Caption style={styles.caption}>@sangnk</Caption>
+                                <Title style={styles.title}>fullName</Title>
+                                <Caption style={styles.caption}>@{props.data.authen.data.username}</Caption>
                             </View>
                         </View>
 

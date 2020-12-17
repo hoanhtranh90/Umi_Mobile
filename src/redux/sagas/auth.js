@@ -17,11 +17,11 @@ function* sagaLoginAction(action) {
       };
       const response = yield _POST(URL_LOGIN, data);
       console.log('=>>>>>', response);
-      if (response) {
+      if (response.token) {
         yield put(
           loginSuccess({
-            token: response.data.token,
-            data: response.data.user,
+            token: response.token,
+            data: response.user,
           }),
         );
       

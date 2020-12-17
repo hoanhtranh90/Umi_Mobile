@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, StatusBar } from 'react-native'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
-
+import { connect } from 'react-redux'
 const Tab = createMaterialTopTabNavigator();
 
-export default function MenuSetting({ navigation }) {
+function MenuSetting(props) {
+    console.log(props)
+    const { navigation } = props;
     return (
         <>
             <View style={styles.headerBar}>
@@ -13,23 +15,14 @@ export default function MenuSetting({ navigation }) {
                     <Icon.Button name="ios-menu" size={30} backgroundColor="#1094F4" onPress={() => navigation.openDrawer()}></Icon.Button>
                 </View>
                 <View>
-                    <Text style={{ fontSize: 18,lineHeight:50,paddingRight:'15%'}}>
+                    <Text style={{ fontSize: 18, lineHeight: 50, paddingRight: '15%' }}>
                         Cài đặt
           </Text>
                 </View>
                 <View />
             </View>
 
-            <MenuSt />
-        </>
-    )
-
-}
-
-function MenuSt() {
-    return (
-
-        <SafeAreaView style={styles.container}>
+            <SafeAreaView style={styles.container}>
             <StatusBar backgroundColor="#1094F4" barStyle="light-content"></StatusBar>
             <View>
                 <Text style={styles.title}>Tài khoản</Text>
@@ -88,18 +81,24 @@ function MenuSt() {
                 </View>
             </View>
             <View style={styles.screenContainer}>
-                <AppButton title="Đăng xuất" size="sm"/>
+
+                <TouchableOpacity onPress={()=>props.logOut()}>
+                    <View style={styles.appButtonContainer}>
+                        <Text style={styles.appButtonText}>Đăng xuất</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
-
-    );
+        </>
+    )
 
 }
 
+
 const styles = StyleSheet.create({
     container: {
-        flex:1,
-        width:'100%'
+        flex: 1,
+        width: '100%'
     },
     headerBar: {
         height: 50,
@@ -125,29 +124,37 @@ const styles = StyleSheet.create({
         paddingLeft: 8,
         fontSize: 16
     },
-    screenContainer:{
-        position:'absolute',
-        width:'100%',
-        bottom:0
+    screenContainer: {
+        position: 'absolute',
+        width: '100%',
+        bottom: 0
     },
-    appButtonContainer:{
-        width:'100%',
-        backgroundColor:'#fff',
-        height:50,
+    appButtonContainer: {
+        width: '100%',
+        backgroundColor: '#fff',
+        height: 50,
     },
     appButtonText: {
         fontSize: 18,
         color: "red",
         alignSelf: "center",
-        lineHeight:50
-      }
-    
+        lineHeight: 50
+    }
+
 
 })
-const AppButton = ({ onPress, title }) => (
-    <TouchableOpacity onPress={onPress} >
-        <View style={styles.appButtonContainer}>
-        <Text style={styles.appButtonText}>{title}</Text>
-        </View>
-    </TouchableOpacity>
-);
+
+const mapDispatchToProps = dispatch => {
+    return {
+        logOut: () => {
+            dispatch({
+                type: "LOG_OUT"
+            }
+            )
+        }
+    }
+};
+
+
+
+export default connect(null, mapDispatchToProps)(MenuSetting);
