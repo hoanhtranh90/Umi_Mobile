@@ -12,22 +12,26 @@ import {
 import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import {connect} from "react-redux";
 
 import { useTheme } from 'react-native-paper';
 import Home from '../../navigator/Home'
+import { loginAction } from '../../redux/action/auth';
 
-export default function SignInScreen ({navigation}){
+const SignInScreen = (props) => {
     // const AuthContext = React.createContext();
-
+// const {navigation,loginAction}=props;
     const [username,setUsername] = useState('')
     const [password,setpassword] = useState('')
     const { colors } = useTheme();
 
     const loginHandle = (user,pass) => {
-        if(user == 'admin' && pass == 'admin')
-        {
-            navigation.navigate('Home')
+        const data = {
+            user:user,
+            password:password
         }
+        // console.log(props.loginAction)
+        props.loginAction(data)
     }
 
 
@@ -71,6 +75,7 @@ export default function SignInScreen ({navigation}){
                 <TextInput 
                     placeholder="Your Password"
                     placeholderTextColor="#666666"
+                    secureTextEntry={true}
                     style={[styles.textInput, {
                         color: colors.text
                     }]}
@@ -108,7 +113,7 @@ export default function SignInScreen ({navigation}){
 const styles = StyleSheet.create({
     container: {
       flex: 1, 
-      backgroundColor: '#009387'
+      backgroundColor: '#1094F4'
     },
     header: {
         flex: 1,
@@ -173,3 +178,14 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     }
   });
+
+
+
+const mapStateToProps = (state) => ({
+});
+
+const mapDispatchToProps = {
+  loginAction,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignInScreen);

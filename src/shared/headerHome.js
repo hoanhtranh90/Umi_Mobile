@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text,View,StyleSheet } from 'react-native'
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 export default function Header({navigation,title}) {
     const openMenu = () => {
@@ -8,7 +8,7 @@ export default function Header({navigation,title}) {
     }
     return (
         <View style={styles.header}>
-            <Icon name="ios-menu" size={30} backgroundColor="#1094F4" onPress={openMenu} style={styles.icon}></Icon>
+            <Icon name="bars" size={25} backgroundColor="#1094F4" onPress={openMenu} style={styles.icon}></Icon>
             <View>
                 <Text style={styles.headerText}>{title}</Text>
             </View>

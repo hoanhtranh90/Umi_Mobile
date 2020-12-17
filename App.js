@@ -7,26 +7,14 @@
  */
 
 import React from 'react';
-import Home from './src/navigator/Home'
-import SignInScreen from './src/screens/Auth/SignInScreen'
-import { createStackNavigator } from '@react-navigation/stack';
-import {NavigationContainer} from '@react-navigation/native';
-
-const Stack = createStackNavigator();
-
+import Index from './src/navigator/index'
+import {Provider} from 'react-redux'
+import {store} from './src/redux/store/index'
 const App: () => React$Node = () => {
   return (
-    <>
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{
-    headerShown: false
-  }}>
-      <Stack.Screen name="Home" component={Home}  />
-
-      <Stack.Screen name="SignInScreen" component={SignInScreen} />
-    </Stack.Navigator>
-    </NavigationContainer>
-    </>
+    <Provider store={store}>
+    <Index/>
+    </Provider>
   );
 };
 

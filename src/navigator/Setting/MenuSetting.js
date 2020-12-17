@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, StatusBar } from 'react-native'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -30,6 +30,7 @@ function MenuSt() {
     return (
 
         <SafeAreaView style={styles.container}>
+            <StatusBar backgroundColor="#1094F4" barStyle="light-content"></StatusBar>
             <View>
                 <Text style={styles.title}>Tài khoản</Text>
                 <View style={{ backgroundColor: '#fff' }}>

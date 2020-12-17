@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, StatusBar } from 'react-native'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -8,6 +8,7 @@ const Tab = createMaterialTopTabNavigator();
 export default function Home({ navigation }) {
     return (
         <>
+        <StatusBar backgroundColor="#1094F4" barStyle="light-content"></StatusBar>
             <View style={styles.header}>
             <Icon name="ios-menu" size={30} backgroundColor="#1094F4" onPress={()=>navigation.openDrawer()} style={styles.icon}></Icon>
             <View>

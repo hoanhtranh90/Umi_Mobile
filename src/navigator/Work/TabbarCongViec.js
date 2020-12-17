@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, StatusBar } from 'react-native'
 import CvDuocGiao from '../../screens/Work/CvDuocGiao'
 import GiaoViec from '../../screens/Work/GiaoViec'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
@@ -11,6 +11,7 @@ const Tab = createMaterialTopTabNavigator();
 export default function TabbarCongViec({ navigation }) {
     return (
         <>
+    <StatusBar backgroundColor="#1094F4" barStyle="light-content"></StatusBar>
              <View style={styles.header}>
             <Icon name="ios-menu" size={30} backgroundColor="#1094F4" onPress={()=>navigation.openDrawer()} style={styles.icon}></Icon>
             <View>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet,StatusBar } from 'react-native'
 import DuThao from '../../screens/VanBanDi/DuThao'
 import VbChoXuLy from '../../screens/VanBanDi/VbChoXuLy'
 import VbDaBanHanh from '../../screens/VanBanDi/VbDaBanHanh'
@@ -12,6 +12,7 @@ const Tab = createMaterialTopTabNavigator();
 export default function TabbarVanBanDi({ navigation }) {
     return (
         <>
+        <StatusBar backgroundColor="#1094F4" barStyle="light-content"></StatusBar>
             <View style={styles.header}>
             <Icon name="ios-menu" size={30} backgroundColor="#1094F4" onPress={()=>navigation.openDrawer()} style={styles.icon}></Icon>
             <View>
