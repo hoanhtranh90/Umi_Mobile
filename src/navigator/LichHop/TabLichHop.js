@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text,StyleSheet } from 'react-native'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
+import Book from '../../screens/LichHop/Book'
 const Tab = createMaterialTopTabNavigator();
 
 export default function TabLichHop({ navigation }) {
@@ -11,11 +12,11 @@ export default function TabLichHop({ navigation }) {
            <View style={styles.header}>
             <Icon name="ios-menu" size={30} backgroundColor="#1094F4" onPress={()=>navigation.openDrawer()} style={styles.icon}></Icon>
             <View>
-                <Text style={styles.headerText}>Báo cáo</Text>
+                <Text style={styles.headerText}>Lịch họp</Text>
             </View>
         </View>
 
-            <View><Text>Agenda here</Text></View>
+            <Book/>
         </>
     )
 }
