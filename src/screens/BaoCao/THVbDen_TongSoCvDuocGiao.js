@@ -58,43 +58,10 @@ const styles = StyleSheet.create({
     flex: 0,
     justifyContent: 'space-between',
   },
-  button: { width: 30 },
-  viewTitle: { alignItems: 'center' },
-  title: { paddingTop: 5, fontSize: 16, color: '#fff' },
-  startTime: { color: '#d3d3d3' },
-  touchable: {
-    justifyContent: 'center',
-    backgroundColor: 'white',
-    borderRadius: 16,
-  },
-  pick: { paddingHorizontal: 16, color: 'black' },
-  modalItem: {
-    height: 50,
-    flexDirection:'row',
-    justifyContent:'space-between',
-    width: '100%',
-    padding: 15,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ebebeb'
 
-  },
-  modalItemBt:{
-    height: 50,
-    flexDirection:'row',
-    justifyContent:'flex-end',
-    width: '100%',
-    padding: 7,
-    paddingRight:15,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ebebeb'
-  },
-  modal: {
-    flex: 1,
-    paddingTop: "13%",
-    backgroundColor: 'rgba(0,0,0,0.5)',
-  },
-  modalInner: {
-    height: 150,
-    backgroundColor: '#FFF',
-  },
+  viewTitle: { alignItems: 'center' },
+  title: {color: '#fff', fontSize: 18,lineHeight:50 },
+
+ 
+
 });

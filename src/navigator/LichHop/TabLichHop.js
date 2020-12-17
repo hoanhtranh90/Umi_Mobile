@@ -1,39 +1,24 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native'
+import { View, Text,StyleSheet } from 'react-native'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
-
 const Tab = createMaterialTopTabNavigator();
 
-export default function Home({ navigation }) {
+export default function TabLichHop({ navigation }) {
+
     return (
         <>
-            <View style={styles.header}>
+           <View style={styles.header}>
             <Icon name="ios-menu" size={30} backgroundColor="#1094F4" onPress={()=>navigation.openDrawer()} style={styles.icon}></Icon>
             <View>
-                <Text style={styles.headerText}>Truyền thông nội bộ</Text>
+                <Text style={styles.headerText}>Báo cáo</Text>
             </View>
         </View>
 
-            <MenuSt />
+            <View><Text>Helo World</Text></View>
         </>
     )
-
 }
-
-function MenuSt() {
-    return (
-
-        <SafeAreaView style={{ backgroundColor: '#ebebeb' }}>
-            <View>
-               <Text>Data api</Text>
-            </View>
-        </SafeAreaView>
-
-    );
-
-}
-
 const styles = StyleSheet.create({
     header:{
         backgroundColor:'#1094F4',
@@ -53,7 +38,5 @@ const styles = StyleSheet.create({
         color:'#fff',
         position:'absolute',
         left:10
-    }
-    
-
+    },
 })

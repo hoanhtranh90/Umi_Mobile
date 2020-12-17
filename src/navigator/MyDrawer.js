@@ -6,13 +6,15 @@ import Home1 from '../screens/home1';
 import Setting from './Setting/index';
 import BaoCao from './BaoCao/index';
 import TruyenThong from './TruyenThongNoiBo/index';
+import ThongBao from './ThongBao//index'
 import Icon from 'react-native-vector-icons/Ionicons';
 import { DrawerContent } from './DrawerContent'
 
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import LichHop from './LichHop';
 
-
+import Header from '../shared/headerHome'
 
 
 const Drawer = createDrawerNavigator();
@@ -32,7 +34,7 @@ function MyDrawer() {
       />
       <Drawer.Screen
         name="ThongBao"
-        component={Home1}
+        component={ThongBao}
       />
       <Drawer.Screen
         name="VanBanDen"
@@ -44,7 +46,7 @@ function MyDrawer() {
       />
       <Drawer.Screen
         name="LichHop"
-        component={Home1}
+        component={LichHop}
         options={{ title: 'Lịch họp' }}
       />
       <Drawer.Screen

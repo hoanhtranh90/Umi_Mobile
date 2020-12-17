@@ -29,7 +29,7 @@ export default function MenuSetting({ navigation }) {
 function MenuSt() {
     return (
 
-        <SafeAreaView style={{ backgroundColor: '#ebebeb' }}>
+        <SafeAreaView style={styles.container}>
             <View>
                 <Text style={styles.title}>Tài khoản</Text>
                 <View style={{ backgroundColor: '#fff' }}>
@@ -96,6 +96,10 @@ function MenuSt() {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex:1,
+        width:'100%'
+    },
     headerBar: {
         height: 50,
         width: '100%',
@@ -121,24 +125,28 @@ const styles = StyleSheet.create({
         fontSize: 16
     },
     screenContainer:{
-        flex:0,
-        paddingTop:'50%'
+        position:'absolute',
+        width:'100%',
+        bottom:0
     },
     appButtonContainer:{
+        width:'100%',
         backgroundColor:'#fff',
         height:50,
-        paddingTop:10
     },
     appButtonText: {
         fontSize: 18,
         color: "red",
         alignSelf: "center",
+        lineHeight:50
       }
     
 
 })
 const AppButton = ({ onPress, title }) => (
-    <TouchableOpacity onPress={onPress} style={styles.appButtonContainer}>
+    <TouchableOpacity onPress={onPress} >
+        <View style={styles.appButtonContainer}>
         <Text style={styles.appButtonText}>{title}</Text>
+        </View>
     </TouchableOpacity>
 );

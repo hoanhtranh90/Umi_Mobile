@@ -1,24 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native'
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const Tab = createMaterialTopTabNavigator();
 
 export default function MenuBaoCao({ navigation }) {
     return (
         <>
-            <View style={styles.headerBar}>
-                <View >
-                    <Icon.Button name="ios-menu" size={30} backgroundColor="#1094F4" onPress={() => navigation.openDrawer()}></Icon.Button>
-                </View>
-                <View>
-                    <Text style={{ fontSize: 18, lineHeight: 50, paddingRight: '15%' }}>
-                        Báo cáo
-          </Text>
-                </View>
-                <View />
+            <View style={styles.header}>
+            <Icon name="ios-menu" size={30} backgroundColor="#1094F4" onPress={()=>navigation.openDrawer()} style={styles.icon}></Icon>
+            <View>
+                <Text style={styles.headerText}>Báo cáo</Text>
             </View>
+        </View>
 
             <SafeAreaView style={{ backgroundColor: '#ebebeb' }}>
             <View>
@@ -113,17 +106,24 @@ export default function MenuBaoCao({ navigation }) {
 
 
 const styles = StyleSheet.create({
-    headerBar: {
-        height: 50,
-        width: '100%',
-        backgroundColor: '#1094F4',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+    header:{
+        backgroundColor:'#1094F4',
+
+        width:'100%',
+        height:50,
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center',
     },
-    title: {
-        lineHeight: 40,
-        fontSize: 14,
-        paddingLeft: 5
+    headerText:{
+        fontSize:18,
+        color:'#fff',
+        letterSpacing:1,
+    },
+    icon:{
+        color:'#fff',
+        position:'absolute',
+        left:10
     },
     item: {
         height: 40,

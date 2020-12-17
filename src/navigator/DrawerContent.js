@@ -51,7 +51,7 @@ export function DrawerContent(props) {
                         />
                         <DrawerItem
                             label="Thông báo"
-                            onPress={() => { props.navigation.navigate('') }}
+                            onPress={() => { props.navigation.navigate('ThongBao') }}
                         />
                         <DrawerItem
 
@@ -66,7 +66,7 @@ export function DrawerContent(props) {
                         <DrawerItem
 
                             label="Lịch họp"
-                            onPress={() => { props.navigation.navigate('') }}
+                            onPress={() => { props.navigation.navigate('LichHop') }}
                         />
                         <DrawerItem
 

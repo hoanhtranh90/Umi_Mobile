@@ -11,17 +11,12 @@ const Tab = createMaterialTopTabNavigator();
 export default function TabbarCongViec({ navigation }) {
     return (
         <>
-            <View style={styles.headerBar}>
-                <View >
-                    <Icon.Button name="ios-menu" size={30} backgroundColor="#1094F4" onPress={() => navigation.openDrawer()}></Icon.Button>
-                </View>
-                <View>
-                    <Text style={{ paddingRight:50, paddingTop: 10, fontSize: 18 }}>
-                        Công việc
-          </Text>
-                </View>
-                <View />
+             <View style={styles.header}>
+            <Icon name="ios-menu" size={30} backgroundColor="#1094F4" onPress={()=>navigation.openDrawer()} style={styles.icon}></Icon>
+            <View>
+                <Text style={styles.headerText}>Công việc</Text>
             </View>
+        </View>
 
             <TabCongViec />
         </>
@@ -29,14 +24,25 @@ export default function TabbarCongViec({ navigation }) {
 
 }
 const styles = StyleSheet.create({
-    headerBar: {
-      height: 50,
-      width: '100%',
-      backgroundColor: '#1094F4',
-      flexDirection: 'row',
-      flex: 0,
-      justifyContent: 'space-between',
+    header:{
+        backgroundColor:'#1094F4',
+
+        width:'100%',
+        height:50,
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center',
     },
+    headerText:{
+        fontSize:18,
+        color:'#fff',
+        letterSpacing:1,
+    },
+    icon:{
+        color:'#fff',
+        position:'absolute',
+        left:10
+    }
 })
 function TabCongViec() {
     return (

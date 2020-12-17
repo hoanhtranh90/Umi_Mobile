@@ -11,6 +11,7 @@ import {
   Button,
 } from 'react-native';
 
+import Header from '../shared/headerHome'
 import Icon from 'react-native-vector-icons/Ionicons';
 
 
@@ -94,17 +95,7 @@ const Home1 = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-<View style={styles.headerBar}>
-        <View >
-        <Icon.Button name="ios-menu" size={30} backgroundColor="#1094F4" onPress={() => navigation.openDrawer()}></Icon.Button>
-        </View>
-        <View>
-          <Text style={{ fontSize: 18,lineHeight:50,paddingRight:'12%'}}>
-            Trang chủ
-          </Text>
-        </View>
-        <View />
-      </View>
+      <Header navigation={navigation} title='Trang chủ'/>
       <FlatList
         data={DATA}
         keyExtractor={(item) => item.id}
@@ -117,14 +108,6 @@ const Home1 = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#ebebeb',
-    flex: 1,
-  },
-  headerBar: {
-    height: 50,
-    width: '100%',
-    backgroundColor: '#1094F4',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
   },
   item: {
     backgroundColor: '#f9c2ff',
