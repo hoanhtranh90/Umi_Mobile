@@ -1,7 +1,6 @@
 import {takeLatest, put} from 'redux-saga/effects';
 import * as types from '../type';
 import {_POST} from '../connection/api';
-import axios from 'axios'
 import {
     loginAction,
 loginSuccess,
@@ -9,13 +8,12 @@ logOut,
 loginFailed,
 }
 from '../action/auth'
-const URL_LOGIN = 'http://192.168.1.239:9698/umiapi/oauth/login'
+const URL_LOGIN = 'https://quiz-demo-eng.herokuapp.com/authenticate'
 function* sagaLoginAction(action) {
     try {
       const data = {
-        userName: "TrungNTt",
-        password: "123456a@",
-        deviceId:"a"
+        username: action.payload.user,
+        password: action.payload.password,
       };
       const response = yield _POST(URL_LOGIN, data);
       console.log('=>>>>>', response);

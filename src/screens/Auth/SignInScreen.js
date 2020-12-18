@@ -31,25 +31,25 @@ const SignInScreen = (props) => {
             password:password
 
         }
-        console.log("avb")
+        // console.log("avb")
         
-        fetch ("https://office.adfilex.vn/umiapi/oauth/login", {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data),
-          })
-            .then((res) => {
-                console.log(res)
-              return res.json();
-            })
-            .catch((error) => {
-              console.log(error);
-              return error;
-            });
+        // fetch ("https://117.4.241.135/umiapi/oauth/login", {
+        //     method: 'POST',
+        //     headers: {
+        //       'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(data),
+        //   })
+        //     .then((res) => {
+        //         console.log(res)
+        //       return res.json();
+        //     })
+        //     .catch((error) => {
+        //       console.log(error);
+        //       return error;
+        //     });
         // console.log(props.loginAction)
-        // props.loginAction(data)
+        props.loginAction(data)
     }
 
 
