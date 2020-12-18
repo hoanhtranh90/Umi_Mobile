@@ -7,7 +7,7 @@ import {
     Platform,
     StyleSheet ,
     StatusBar,
-    Alert
+    Image
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
@@ -29,9 +29,27 @@ const SignInScreen = (props) => {
         const data = {
             user:user,
             password:password
+
         }
+        console.log("avb")
+        
+        fetch ("https://office.adfilex.vn/umiapi/oauth/login", {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data),
+          })
+            .then((res) => {
+                console.log(res)
+              return res.json();
+            })
+            .catch((error) => {
+              console.log(error);
+              return error;
+            });
         // console.log(props.loginAction)
-        props.loginAction(data)
+        // props.loginAction(data)
     }
 
 
@@ -45,7 +63,12 @@ const SignInScreen = (props) => {
                 backgroundColor: colors.background
             }]}
         >
-            <View style={{height:200,backgroundColor:'#ebebeb'}}><Text>Logo</Text></View>
+            <View style={{height:'30%',width:'100%',flexDirection:'row',justifyContent:'center',paddingTop:'15%'}}>
+                <Image
+                source={require('../../assets/img/logo.png')}
+                style={{ height: 90,paddingTop:20 }}
+                />
+                </View>
             <Text style={[styles.text_footer, {
                 color: colors.text
             }]}>Username</Text>

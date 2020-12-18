@@ -1,11 +1,11 @@
+import axios from 'axios'
 export function _POST(url, data, token, loading = true) {
   console.log('POST: ', url, data, token);
-
-  const response = fetch(url, {
+  
+  const response = fetch (url, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify(data),
   })

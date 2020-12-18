@@ -12,6 +12,8 @@ const authPersistConfig = {
   storage: AsyncStorage,
   whitelist: [
     'token',
+    'data',
+    'isLogin',
   ],
 };
 
