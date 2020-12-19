@@ -6,6 +6,13 @@ export const loginAction = (data) => {
     payload: data,
   };
 };
+
+export const isLoading = (data) => {
+  return {
+    type: types.IS_LOADING,
+    payload: data,
+  };
+};
 export const loginSuccess = (data) => {
     return {
       type: types.LOGIN_SUCCESS,

@@ -1,5 +1,5 @@
-import {combineReducers} from 'redux';
-import {persistReducer} from 'redux-persist';
+import { combineReducers } from 'redux';
+import { persistReducer } from 'redux-persist';
 
 // Imports: Reducers
 import authen from './auth';
@@ -11,9 +11,18 @@ const authPersistConfig = {
   key: 'authen',
   storage: AsyncStorage,
   whitelist: [
+    'loginSuccess',
     'token',
-    'data',
-    'isLogin',
+    'roles',
+    'fullName',
+    'position',
+    'status',
+    'userName',
+    'userId',
+    'deviceId',
+    'consumerKey',
+    'message',
+    'menus',
   ],
 };
 

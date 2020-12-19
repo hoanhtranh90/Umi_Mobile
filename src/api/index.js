@@ -1,4 +1,6 @@
-const HOST  = "https://office.adfilex.vn"
-const LoginMessageRequest = "/umiapi/oauth/login",
-LOGOUT =""
+export default URL = {
+ LoginMessageRequest: "/umiapi/oauth/login",
+ 
+
+}
     

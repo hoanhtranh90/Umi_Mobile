@@ -8,12 +8,14 @@ logOut,
 loginFailed,
 }
 from '../action/auth'
-const URL_LOGIN = 'https://quiz-demo-eng.herokuapp.com/authenticate'
+// const URL_LOGIN = 'https://telesale.adfilex.vn/umiapi/oauth/login'
+const URL_LOGIN = 'https://office.adfilex.vn/umiapi/oauth/login'
 function* sagaLoginAction(action) {
     try {
       const data = {
-        username: action.payload.user,
+        userName: action.payload.user,
         password: action.payload.password,
+        deviceId:"test"
       };
       const response = yield _POST(URL_LOGIN, data);
       console.log('=>>>>>', response);
@@ -22,6 +24,16 @@ function* sagaLoginAction(action) {
           loginSuccess({
             token: response.token,
             data: response.user,
+            roles:response.roles,
+            fullName:response.fullName,
+            position:response.position,
+            status:response.status,
+            userName:response.userName,
+            userId:response.userId,
+            deviceId:response.deviceId,
+            consumerKey:response.consumerKey,
+            message:response.message,
+            menus:response.menu,
           }),
         );
       

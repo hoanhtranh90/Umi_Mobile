@@ -5,7 +5,7 @@ export function _POST(url, data, token, loading = true) {
   const response = fetch (url, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(data),
   })

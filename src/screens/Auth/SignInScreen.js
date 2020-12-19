@@ -33,10 +33,11 @@ const SignInScreen = (props) => {
         }
         // console.log("avb")
         
-        // fetch ("https://117.4.241.135/umiapi/oauth/login", {
+        // fetch ("https://office.adfilex.vn/umiapi/oauth/login", {
+        //     //telesale.adfilex.vn/
         //     method: 'POST',
         //     headers: {
-        //       'Content-Type': 'application/json'
+        //       'Content-Type': 'application/json',
         //     },
         //     body: JSON.stringify(data),
         //   })
